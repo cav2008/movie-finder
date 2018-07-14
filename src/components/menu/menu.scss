@@ -1,0 +1,33 @@
+@import '../../styles/styles.scss';
+
+.menu__button-wrapper {
+  display: inline-block;
+
+  &--right {
+    text-align: right;
+    padding-right: 20px;
+  }
+
+  &--left {
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  &--divider {
+    border-right: 3px solid $black;
+  }
+}
+
+.menu__button {
+  color: $green;
+  border: none;
+  background: none;
+  font-size: 21px;
+  font-weight: bold;
+  padding: 0;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}

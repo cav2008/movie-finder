@@ -1,0 +1,18 @@
+@import '../../styles/styles.scss';
+
+.search__textbox {
+  width: 600px;
+  margin: 30px auto;
+  border: 4px solid $grey;
+  border-radius: 4px;
+  font-size: 26px;
+  padding: 10px 20px;
+
+  &:hover, &:focus {
+    border-color: $dark-grey;
+  }
+
+  &:focus {
+    outline-width: 0;
+  }
+}

@@ -16,12 +16,14 @@ export default class Home extends React.Component {
 
   render() {
     return (
-      <div>
-        <Menu />
-        <Search saveSearchResult={this.props.saveSearchResult} />
-        <MovieList
-          movies={this.props.searchResults}
-        />
+      <div className="page">
+        <div className="page__container">
+          <Menu />
+          <Search saveSearchResult={this.props.saveSearchResult} />
+          <MovieList
+            movies={this.props.searchResults}
+          />
+        </div>
       </div>
     );
   }

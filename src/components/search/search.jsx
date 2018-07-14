@@ -5,6 +5,8 @@ import { OMDB_URL, API_KEY } from '../../constants/constants';
 
 import fetch from '../../helpers/fetch';
 
+import './search.scss';
+
 export default class Search extends React.Component {
   static createApiUrl(movieTitle) {
     return `${OMDB_URL}?apikey=${API_KEY}&t=${movieTitle}`;
@@ -26,8 +28,8 @@ export default class Search extends React.Component {
 
   render() {
     return (
-      <div>
-        <input type="text" onKeyPress={this.handleOnClick} />
+      <div className="search">
+        <input className="search__textbox" type="text" onKeyPress={this.handleOnClick} />
       </div>
     );
   }

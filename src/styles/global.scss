@@ -1,1 +1,11 @@
 @import './styles.scss';
+
+* {
+  font-family: Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+  color: $black;
+}
+
+html, body, .app {
+  height: 100%;
+}
