@@ -9,7 +9,7 @@ const defaultState = {
  * @param {Object} action the action with the data to put in the store.
  * @return {Object} returns new state to put in store.
  */
-export default function Movies(state = defaultState, action) {
+export default function movies(state = defaultState, action) {
   switch (action.type) {
     case 'SAVE_SEARCH_RESULT':
       return Object.assign({}, state, {

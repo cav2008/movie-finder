@@ -12,12 +12,12 @@ export default class Results extends React.Component {
   render() {
     return (
       <div>
-        {this.props.searchResults.map((movie, index) => <MovieItem key={index} movie={movie} />)}
+        {this.props.movies.map((movie, index) => <MovieItem key={index} movie={movie} />)}
       </div>
     );
   }
 }
 
 Results.propTypes = {
-  searchResults: PropTypes.array.isRequired,
+  movies: PropTypes.array.isRequired,
 };

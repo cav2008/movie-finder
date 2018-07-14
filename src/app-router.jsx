@@ -8,6 +8,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 // Pages
 import HomeContainer from './containers/home';
+import FavouritesContainer from './containers/favourites';
 
 // Styles
 import './styles/global.scss';
@@ -20,6 +21,7 @@ const AppRouter = () => (
     <HashRouter>
       <div className="page">
         <Route exact path="/" component={HomeContainer} />
+        <Route path="/favourites" component={FavouritesContainer} />
       </div>
     </HashRouter>
   </Provider>

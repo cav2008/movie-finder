@@ -1,13 +1,13 @@
-export function saveSearchResult(data) {
+export const saveSearchResult = (data) => {
   return {
     type: 'SAVE_SEARCH_RESULT',
     data,
   };
-}
+};
 
-export function saveFavouriteMovie(data) {
+export const saveFavouriteMovie = (data) => {
   return {
     type: 'SAVE_FAVOURITE_MOVIE',
     data,
   };
-}
+};

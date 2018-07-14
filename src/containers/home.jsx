@@ -2,7 +2,7 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 // Actions
-import { saveSearchResult, saveFavouriteMovie } from '../actions/movies';
+import { saveSearchResult } from '../actions/movies';
 
 import Home from '../pages/home/home';
 
@@ -25,7 +25,6 @@ function mapStateToProps(state) {
 function matchDispatchToProps(dispatch) {
   return bindActionCreators({
     saveSearchResult,
-    saveFavouriteMovie,
   }, dispatch);
 }
 
