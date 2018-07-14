@@ -19,8 +19,7 @@ export default class Search extends React.Component {
     if (e.key === 'Enter') {
       fetch(Search.createApiUrl(e.target.value))
         .then((data) => {
-          console.log(data);
-          this.props.saveSearchResult(data.data);
+          this.props.saveSearchResult([data.data]);
         });
     }
   }

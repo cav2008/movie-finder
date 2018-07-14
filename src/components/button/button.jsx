@@ -9,7 +9,7 @@ export default class Button extends React.Component {
 
   render() {
     return (
-      <button>Find</button>
+      <button>Favourite</button>
     );
   }
 }

@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 
 // Components
 import Search from '../../components/search/search';
+import Results from '../../components/results/results';
 
 import './initial.scss';
 
-export default class Chat extends React.Component {
+export default class Home extends React.Component {
   constructor(props) {
     super(props);
     console.log(this.props);
@@ -16,14 +17,16 @@ export default class Chat extends React.Component {
     return (
       <div>
         <Search saveSearchResult={this.props.saveSearchResult} />
+        <Results searchResults={this.props.searchResults} />
       </div>
     );
   }
 }
 
-Chat.propTypes = {
+Home.propTypes = {
+  searchResults: PropTypes.array.isRequired,
   saveSearchResult: PropTypes.func.isRequired,
 };
 
-Chat.defaultProps = {
+Home.defaultProps = {
 };

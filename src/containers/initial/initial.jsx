@@ -13,6 +13,7 @@ import Initial from '../../pages/initial/initial';
  */
 function mapStateToProps(state) {
   return {
+    searchResults: state.searchResult.movies,
   };
 }
 

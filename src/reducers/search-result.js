@@ -1,5 +1,5 @@
 const defaultState = {
-  movie: [],
+  movies: [],
 };
 
 /**
@@ -12,7 +12,7 @@ export default function searchResult(state = defaultState, action) {
   switch (action.type) {
     case 'SAVE_SEARCH_RESULT':
       return Object.assign({}, state, {
-        movie: action.data,
+        movies: action.data,
       });
     default:
       return state;
