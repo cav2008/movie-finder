@@ -2,9 +2,9 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 // Actions
-import saveSearchResult from '../../actions/search-result';
+import { saveSearchResult, saveFavouriteMovie } from '../actions/movies';
 
-import Initial from '../../pages/initial/initial';
+import Home from '../pages/home/home';
 
 /**
  * Maps the props that will be passed to the component to a state property.
@@ -13,7 +13,7 @@ import Initial from '../../pages/initial/initial';
  */
 function mapStateToProps(state) {
   return {
-    searchResults: state.searchResult.movies,
+    searchResults: state.movies.searchedMovies,
   };
 }
 
@@ -25,7 +25,8 @@ function mapStateToProps(state) {
 function matchDispatchToProps(dispatch) {
   return bindActionCreators({
     saveSearchResult,
+    saveFavouriteMovie,
   }, dispatch);
 }
 
-export default connect(mapStateToProps, matchDispatchToProps)(Initial);
+export default connect(mapStateToProps, matchDispatchToProps)(Home);

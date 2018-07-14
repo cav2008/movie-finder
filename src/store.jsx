@@ -4,11 +4,11 @@ import { devToolsEnhancer } from 'redux-devtools-extension';
 import { createStore, combineReducers } from 'redux';
 
 // Reducers.
-import searchResultReducer from './reducers/search-result';
+import moviesReducers from './reducers/movies';
 
 // Combine all the reducers into one object.
 const allReducers = combineReducers({
-  searchResult: searchResultReducer,
+  movies: moviesReducers,
 });
 
 const store = createStore(allReducers, devToolsEnhancer());

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import Search from '../../components/search/search';
 import Results from '../../components/results/results';
 
-import './initial.scss';
+import './home.scss';
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -17,7 +17,10 @@ export default class Home extends React.Component {
     return (
       <div>
         <Search saveSearchResult={this.props.saveSearchResult} />
-        <Results searchResults={this.props.searchResults} />
+        <Results
+          searchResults={this.props.searchResults}
+          saveFavouriteMovie={this.props.saveFavouriteMovie}
+        />
       </div>
     );
   }
@@ -26,6 +29,7 @@ export default class Home extends React.Component {
 Home.propTypes = {
   searchResults: PropTypes.array.isRequired,
   saveSearchResult: PropTypes.func.isRequired,
+  saveFavouriteMovie: PropTypes.func.isRequired,
 };
 
 Home.defaultProps = {

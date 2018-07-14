@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 
 import store from './store';
 // Pages
-import InitialContainer from './containers/initial/initial';
+import HomeContainer from './containers/home';
 
 // Styles
 import './styles/global.scss';
@@ -19,7 +19,7 @@ const AppRouter = () => (
   <Provider store={store}>
     <HashRouter>
       <div className="page">
-        <Route exact path="/" component={InitialContainer} />
+        <Route exact path="/" component={HomeContainer} />
       </div>
     </HashRouter>
   </Provider>

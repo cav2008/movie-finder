@@ -1,5 +1,6 @@
 const defaultState = {
-  movies: [],
+  searchedMovies: [],
+  favouriteMovies: [],
 };
 
 /**
@@ -8,11 +9,15 @@ const defaultState = {
  * @param {Object} action the action with the data to put in the store.
  * @return {Object} returns new state to put in store.
  */
-export default function searchResult(state = defaultState, action) {
+export default function Movies(state = defaultState, action) {
   switch (action.type) {
     case 'SAVE_SEARCH_RESULT':
       return Object.assign({}, state, {
-        movies: action.data,
+        searchedMovies: action.data,
+      });
+    case 'SAVE_FAVOURITE_MOVIE':
+      return Object.assign({}, state, {
+        favouriteMovies: [action.data, ...state.favouriteMovies],
       });
     default:
       return state;

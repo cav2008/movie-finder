@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Button from '../button/button';
+import FavouriteButtonContainer from '../../containers/favourite-button';
 
 export default class MovieItem extends React.Component {
   constructor(props) {
@@ -32,7 +32,7 @@ export default class MovieItem extends React.Component {
             <p>IMDb Rating: {imdbRating}</p>
           </div>
           <div>
-            <Button />
+            <FavouriteButtonContainer movie={this.props.movie} />
           </div>
         </div>
       </div>
