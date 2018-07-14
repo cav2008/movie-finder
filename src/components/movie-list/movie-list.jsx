@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import MovieItem from '../movie-item/movie-item';
 
-export default class Results extends React.Component {
+export default class MovieList extends React.Component {
   constructor(props) {
     super(props);
     console.log(this.props);
@@ -18,6 +18,6 @@ export default class Results extends React.Component {
   }
 }
 
-Results.propTypes = {
+MovieList.propTypes = {
   movies: PropTypes.array.isRequired,
 };

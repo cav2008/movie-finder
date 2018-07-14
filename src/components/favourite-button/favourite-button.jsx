@@ -21,7 +21,7 @@ export default class FavouriteButton extends React.Component {
 
   render() {
     return (
-      <button onClick={this.handleClick}>Favourite</button>
+      <button onClick={this.handleClick}>Add to favourites</button>
     );
   }
 }

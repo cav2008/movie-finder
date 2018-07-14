@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 // Components
 import Menu from '../../components/menu/menu';
 import Search from '../../components/search/search';
-import Results from '../../components/results/results';
+import MovieList from '../../components/movie-list/movie-list';
 
 import './home.scss';
 
@@ -19,7 +19,7 @@ export default class Home extends React.Component {
       <div>
         <Menu />
         <Search saveSearchResult={this.props.saveSearchResult} />
-        <Results
+        <MovieList
           movies={this.props.searchResults}
         />
       </div>

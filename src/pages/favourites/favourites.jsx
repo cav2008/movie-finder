@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 // Components
 import Menu from '../../components/menu/menu';
-import Results from '../../components/results/results';
+import MovieList from '../../components/movie-list/movie-list';
 
 import '../home/home.scss';
 
@@ -17,7 +17,7 @@ export default class Favourites extends React.Component {
     return (
       <div>
         <Menu />
-        <Results
+        <MovieList
           movies={this.props.favouriteMovies}
         />
       </div>
