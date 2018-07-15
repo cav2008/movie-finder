@@ -1,16 +1,27 @@
 {
-  "name": "starter-kit-client",
+  "name": "movie-finder",
   "version": "1.0.0",
-  "description": "Client side starter kit",
+  "description": "Movie finder",
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage",
     "start": "webpack-dev-server --mode development --config webpack.dev.config.js --port 8000 --progress --colors --open",
     "build": "webpack --mode production --config webpack.prod.config.js --progress --colors"
   },
+  "jest": {
+    "testURL": "http://localhost:8000",
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    },
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less|scss)$": "identity-obj-proxy"
+    },
+    "setupTestFrameworkScriptFile": "<rootDir>/test-setup.js"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cav2008/starter-kit-client.git"
+    "url": "git+https://github.com/cav2008/movie-finder.git"
   },
   "keywords": [
     "React",
@@ -26,9 +37,9 @@
   "author": "Cavan",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cav2008/starter-kit-client/issues"
+    "url": "https://github.com/cav2008/movie-finder.git"
   },
-  "homepage": "https://github.com/cav2008/starter-kit-client#readme",
+  "homepage": "https://github.com/cav2008/movie-finder.git#readme",
   "dependencies": {
     "axios": "^0.18.0",
     "clean-webpack-plugin": "^0.1.19",
@@ -63,6 +74,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
     "file-loader": "^1.1.11",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^22.4.2",
     "node-sass": "^4.7.2",
     "redux-devtools": "^3.4.1",

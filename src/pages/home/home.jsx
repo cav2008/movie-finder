@@ -8,31 +8,23 @@ import MovieList from '../../components/movie-list/movie-list';
 
 import './home.scss';
 
-export default class Home extends React.Component {
-  constructor(props) {
-    super(props);
-    console.log(this.props);
-  }
-
-  render() {
-    return (
-      <div className="page">
-        <div className="page__container">
-          <Menu />
-          <Search saveSearchResult={this.props.saveSearchResult} />
-          <MovieList
-            movies={this.props.searchResults}
-          />
-        </div>
+const Home = (props) => {
+  return (
+    <div className="page">
+      <div className="page__container">
+        <Menu />
+        <Search saveSearchResult={props.saveSearchResult} />
+        <MovieList
+          movies={props.searchResults}
+        />
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 Home.propTypes = {
   searchResults: PropTypes.array.isRequired,
   saveSearchResult: PropTypes.func.isRequired,
 };
 
-Home.defaultProps = {
-};
+export default Home;
