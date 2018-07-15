@@ -39,39 +39,53 @@ export default class MovieItem extends React.Component {
     this.movieStyles();
 
     return (
-      <div className={this.movieClass.join(' ')}>
-        <div className="movie__header-row">
-          <div className="btn-wrapper">
-            <FavouriteButtonContainer movie={this.props.movie} callback={this.animate} />
+      <Choose>
+        <When condition={Title}>
+          <div className={this.movieClass.join(' ')}>
+            <div className="movie__header-row">
+              <div className="btn-wrapper">
+                <FavouriteButtonContainer movie={this.props.movie} callback={this.animate} />
+              </div>
+              <h2 className="movie__title">{Title}</h2>
+            </div>
+            <div className="movie__detail-row">
+              <div className="movie__content movie__content--center">
+                <Choose>
+                  <When condition={Poster !== 'N/A'}>
+                    <img className="movie__img" src={Poster} alt={Title} />
+                  </When>
+                  <Otherwise>
+                    <img className="movie__img" src="http://via.placeholder.com/230x324" alt={Title} />
+                  </Otherwise>
+                </Choose>
+              </div>
+              <div className="movie__content movie__content--60 movie__content--padding">
+                <p className="movie__info">{Plot}</p>
+              </div>
+              <div className="movie__content movie__content--padding">
+                <p className="movie__info">
+                  Year: <span className="movie__info--no-bold">{Year}</span>
+                </p>
+                <p className="movie__info">
+                  Run Time: <span className="movie__info--no-bold">{Runtime}</span>
+                </p>
+                <p className="movie__info">
+                  Genre: <span className="movie__info--no-bold">{Genre}</span>
+                </p>
+                <p className="movie__info">
+                  Language: <span className="movie__info--no-bold">{Language}</span>
+                </p>
+                <p className="movie__info">
+                  IMDb Rating: <span className="movie__info--no-bold">{imdbRating}</span>
+                </p>
+              </div>
+            </div>
           </div>
-          <h2 className="movie__title">{Title}</h2>
-        </div>
-        <div className="movie__detail-row">
-          <div className="movie__content movie__content--center">
-            <img className="movie__img" src={Poster} alt={Title} />
-          </div>
-          <div className="movie__content movie__content--60 movie__content--padding">
-            <p className="movie__info">{Plot}</p>
-          </div>
-          <div className="movie__content movie__content--padding">
-            <p className="movie__info">
-              Year: <span className="movie__info--no-bold">{Year}</span>
-            </p>
-            <p className="movie__info">
-              Run Time: <span className="movie__info--no-bold">{Runtime}</span>
-            </p>
-            <p className="movie__info">
-              Genre: <span className="movie__info--no-bold">{Genre}</span>
-            </p>
-            <p className="movie__info">
-              Language: <span className="movie__info--no-bold">{Language}</span>
-            </p>
-            <p className="movie__info">
-              IMDb Rating: <span className="movie__info--no-bold">{imdbRating}</span>
-            </p>
-          </div>
-        </div>
-      </div>
+        </When>
+        <Otherwise>
+          <h2>Sorry no movie found</h2>
+        </Otherwise>
+      </Choose>
     );
   }
 }

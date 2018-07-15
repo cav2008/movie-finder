@@ -5,5 +5,5 @@
       "presets": [["es2015", "react"]]
     }
   },
-  "plugins": [ "react-hot-loader/babel" ]
+  "plugins": [ "jsx-control-statements", "react-hot-loader/babel" ]
 }
