@@ -9,10 +9,15 @@
   max-width: 1200px;
   display: inline-block;
   margin-bottom: 10px;
+  transition: margin-top 0.1s;
 
   @media screen and (max-width: $mobile) {
     padding: 10px 0;
   }
+}
+
+.bounce {
+  margin-top: -20px;
 }
 
 .movie__header-row {
@@ -22,14 +27,13 @@
 .btn-wrapper {
   position: absolute;
   right: 0;
-  top: 0;
+  top: -30px;
 
   @media screen and (max-width: $mobile) {
     position: relative;
-    right: auto;
+    right: 10px;
     top: auto;
     text-align: right;
-    margin-top: 10px;
   }
 }
 
@@ -69,7 +73,7 @@
 }
 
 .movie__img {
-  width: 280px;
+  width: 230px;
 
   @media screen and (max-width: $mobile) {
     width: auto;

@@ -1,12 +1,13 @@
 @import '../../styles/styles.scss';
 
 .search__textbox {
-  width: 600px;
+  width: 300px;
   margin-bottom: 30px;
   border: 4px solid $grey;
   border-radius: 4px;
   font-size: 26px;
   padding: 10px 20px;
+  transition: width 1s;
 
   @media screen and (max-width: $mobile) {
     width: 100%;
@@ -14,6 +15,14 @@
 
   &:hover, &:focus {
     border-color: $dark-grey;
+  }
+
+  &:hover {
+    width: 600px;
+
+    @media screen and (max-width: $mobile) {
+      width: 100%;
+    }
   }
 
   &:focus {

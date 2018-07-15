@@ -8,7 +8,27 @@ import './movie-item.scss';
 export default class MovieItem extends React.Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
+
+    this.state = {
+      active: false,
+    };
+
+    this.animate = this.animate.bind(this);
+  }
+
+  animate() {
+    this.setState({ active: true });
+
+    setTimeout(() => {
+      this.setState({ active: false });
+    }, 200);
+  }
+
+  movieStyles() {
+    this.movieClass = ['movie'];
+    if (this.state.active) {
+      this.movieClass.push('bounce');
+    }
   }
 
   render() {
@@ -16,11 +36,13 @@ export default class MovieItem extends React.Component {
       Title, Plot, Poster, Year, Runtime, Genre, imdbRating, Language,
     } = this.props.movie;
 
+    this.movieStyles();
+
     return (
-      <div className="movie">
+      <div className={this.movieClass.join(' ')}>
         <div className="movie__header-row">
           <div className="btn-wrapper">
-            <FavouriteButtonContainer movie={this.props.movie} />
+            <FavouriteButtonContainer movie={this.props.movie} callback={this.animate} />
           </div>
           <h2 className="movie__title">{Title}</h2>
         </div>

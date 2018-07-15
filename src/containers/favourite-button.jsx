@@ -9,6 +9,7 @@ function mapStateToProps(state, ownProps) {
   return {
     favouriteMovies: state.movies.favouriteMovies,
     movie: ownProps.movie,
+    callback: ownProps.callback,
   };
 }
 

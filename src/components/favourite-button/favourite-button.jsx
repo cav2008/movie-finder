@@ -18,6 +18,7 @@ export default class FavouriteButton extends React.Component {
   handleClick() {
     if (!this.isFavourited(this.props.movie)) {
       this.props.saveFavouriteMovie(this.props.movie);
+      this.props.callback();
     }
   }
 
@@ -30,6 +31,11 @@ export default class FavouriteButton extends React.Component {
 
 FavouriteButton.propTypes = {
   movie: PropTypes.object.isRequired,
+  callback: PropTypes.func,
   favouriteMovies: PropTypes.array.isRequired,
   saveFavouriteMovie: PropTypes.func.isRequired,
+};
+
+FavouriteButton.defaultProps = {
+  callback: null,
 };
