@@ -15,11 +15,13 @@ export default class Favourites extends React.Component {
 
   render() {
     return (
-      <div>
-        <Menu />
-        <MovieList
-          movies={this.props.favouriteMovies}
-        />
+      <div className="page">
+        <div className="page__container">
+          <Menu />
+          <MovieList
+            movies={this.props.favouriteMovies}
+          />
+        </div>
       </div>
     );
   }

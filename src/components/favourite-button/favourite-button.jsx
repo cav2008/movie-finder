@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import './favourite-button.scss';
+
 export default class FavouriteButton extends React.Component {
   constructor(props) {
     super(props);
@@ -21,7 +23,7 @@ export default class FavouriteButton extends React.Component {
 
   render() {
     return (
-      <button onClick={this.handleClick}>Add to favourites</button>
+      <button className="fav-btn" onClick={this.handleClick}>+</button>
     );
   }
 }
