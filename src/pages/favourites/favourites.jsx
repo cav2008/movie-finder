@@ -7,25 +7,18 @@ import MovieList from '../../components/movie-list/movie-list';
 
 import '../home/home.scss';
 
-export default class Favourites extends React.Component {
-  constructor(props) {
-    super(props);
-    console.log(this.props);
-  }
-
-  render() {
-    return (
-      <div className="page">
-        <div className="page__container">
-          <Menu />
-          <MovieList
-            movies={this.props.favouriteMovies}
-          />
-        </div>
+const Favourites = (props) => {
+  return (
+    <div className="page">
+      <div className="page__container">
+        <Menu />
+        <MovieList
+          movies={props.favouriteMovies}
+        />
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 Favourites.propTypes = {
   favouriteMovies: PropTypes.array,
@@ -34,3 +27,5 @@ Favourites.propTypes = {
 Favourites.defaultProps = {
   favouriteMovies: [],
 };
+
+export default Favourites;
