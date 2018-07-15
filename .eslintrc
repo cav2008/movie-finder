@@ -20,6 +20,8 @@
     "react/forbid-prop-types": "off",
     "react/jsx-no-undef": "off",
     "react/no-array-index-key": "warn",
-    "arrow-body-style": "warn"
+    "arrow-body-style": "warn",
+    "function-paren-newline": "warn",
+    "no-unused-expressions": "off"
   }
 }
