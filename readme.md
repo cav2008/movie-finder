@@ -19,6 +19,8 @@ npm
 To install the application follow the following steps:
 
 ```
+git clone https://github.com/cav2008/movie-finder.git
+git checkout master (master branch)
 npm install
 ```
 
