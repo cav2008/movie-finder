@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const babelPolyfill = require("babel-polyfill");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -7,7 +8,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
   context: path.resolve(__dirname, './src'),
   entry: {
-    app: './index.jsx',
+    app: ['babel-polyfill', './index.jsx'],
   },
   output: {
     path: path.resolve(__dirname, './dist'),

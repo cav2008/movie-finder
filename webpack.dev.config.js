@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const babelPolyfill = require("babel-polyfill");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
@@ -7,7 +8,7 @@ module.exports = {
   context: path.resolve(__dirname, './src'),
   // This is entry way if using HtmlWebpackPlugin to make index.html file.
   entry: {
-    app: './index.jsx',
+    app: ['babel-polyfill', './index.jsx'],
   },
   // magic link to see what is in the virtual directory localhost:8000/webpack-dev-server
   output: {
