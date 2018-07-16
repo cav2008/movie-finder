@@ -53,10 +53,12 @@
 }
 
 .movie__content {
-  flex: 1 1 20%;
+  // flex: 1 1 20%;
+  flex: 1 1 auto;
 
   &--60 {
-    flex-basis: 60%;
+    // flex-basis: 60%;
+    flex-basis: auto;
   }
 
   &--padding {
